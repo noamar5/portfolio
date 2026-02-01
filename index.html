@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Noa MARCHIONNI</title>
+  <meta name="description" content="Mon Portfolio — Webmaster (DEUST Webmaster)" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/img/favicon.svg" id="favicon" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- Fond animé -->
+  <canvas id="bg"></canvas>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a class="logo" href="#top">Noa MARCHIONNI</a>
+
+    <nav class="nav">
+      <a href="#projets">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#about">À propos</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top" class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-card glass">
+        <p class="tag">DEUST Webmaster — 2e année</p>
+        <h1>
+          Mon <span class="neon">Portfolio</span><br />
+          Dév Web / Intégration / UI
+        </h1>
+        <p class="sub">
+        Je réalise des sites web modernes et faciles à gérer : intégration, WordPress, optimisation et mises à jour.
+		<br>
+		Ici, vous trouverez mes projets, mes compétences et un formulaire de contact. 
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#projets">Voir mes projets</a>
+          <a class="btn ghost" href="#contact">Me contacter</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">HTML</span>
+            <span class="stat-label">Structure</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">CSS</span>
+            <span class="stat-label">UI / Responsive</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">JS</span>
+            <span class="stat-label">Animations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="panel glass">
+          <h2>Focus</h2>
+          <ul class="bullets">
+            <li>Intégration propre & responsive</li>
+            <li>WordPress : pages, thèmes, optimisation</li>
+            <li>Performance / SEO / accessibilité</li>
+			<li>Maintenance & mises à jour</li>
+          </ul>
+        </div>
+
+        <div class="panel glass">
+          <h2>Disponibilité</h2>
+          <p>Disponible pour un stage de 2 mois minimum en Asie.</p>
+          <div class="pill-row">
+            <span class="pill">Intégration</span>
+            <span class="pill">WordPress</span>
+            <span class="pill">SEO</span>
+			<span class="pill">Performance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="section">
+      <div class="section-head">
+        <h2>Projets</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card glass">
+		<span class="project-badge">⭐ Projet réel</span>
+          <div class="card-top">
+            <span class="chip">WordPress</span>
+			<span class="chip">HTML/CSS</span>
+            <span class="chip">Responsive</span>
+			<span class="chip">UI</span>
+			<span class="chip">SEO (bases)</span>
+          </div>
+          <h3>Reconstruction WordPress — Gube Communication</h3>
+		  <p>Reconstruction d’un site WordPress suite à une perte de données.
+		  <br>
+			Recréation des pages, intégration des contenus et remise en ligne rapide.</p>
+          <div class="card-actions">
+            <a class="link" href="https://gubecom.fr" target="_blank" rel="noreferrer">Site</a>
+          </div>
+        </article>
+
+        <article class="card glass">
+		<span class="project-badge">👥 Client réel</span>
+          <div class="card-top">
+            <span class="chip">WordPress</span>
+            <span class="chip">Optimisation</span>
+			<span class="chip">Responsive</span>
+			<span class="chip">UX</span>
+			<span class="chip">SEO (bases)</span>
+          </div>
+          <h3>Optimisation d’un site WordPress — Puppy Corner</h3>
+          <p>Amélioration d’un site existant afin d’optimiser la structure, le responsive et l’expérience utilisateur.</p>
+          <div class="card-actions">
+            <a class="link" href="https://www.puppycorner.fr/" target="_blank" rel="noreferrer">Site</a>
+          </div>
+        </article>
+
+        <article class="card glass">
+		<span class="project-badge">🤝 Travail en équipe</span>
+          <div class="card-top">
+            <span class="chip">PHP</span>
+            <span class="chip">MySQL</span>
+			<span class="chip">CRUD</span>
+			<span class="chip">Sessions</span>
+			<span class="chip">Travail collaboratif</span>
+          </div>
+          <h3>Application web de gestion — Restaurant</h3>
+          <p>Développement en équipe d’une application web permettant de gérer l’activité d’un restaurant : authentification, tableau de bord et gestion des données.</p>
+          <div class="card-actions">
+            <a class="link" href="https://youtu.be/mHOll4mHPMs" target="_blank" rel="noreferrer">Démo</a>
+            <a class="link" href="https://github.com/noamar5/restaurant-management-webapp" target="_blank" rel="noreferrer">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2>Compétences</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card glass">
+          <h3>Front-end</h3>
+          <div class="bars">
+            <div class="bar">
+              <span>HTML</span>
+              <span class="pct">90%</span>
+              <div class="track"><div class="fill" style="--w: 90%"></div></div>
+            </div>
+            <div class="bar">
+              <span>CSS</span>
+              <span class="pct">85%</span>
+              <div class="track"><div class="fill" style="--w: 85%"></div></div>
+            </div>
+            <div class="bar">
+              <span>JavaScript</span>
+              <span class="pct">75%</span>
+              <div class="track"><div class="fill" style="--w: 75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass">
+          <h3>Outils</h3>
+          <div class="pill-row">
+            <span class="pill">Git</span>
+            <span class="pill">WordPress</span>
+            <span class="pill">SEO</span>
+            <span class="pill">PHP (bases)</span>
+            <span class="pill">MySQL (bases)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>À propos</h2>
+      </div>
+
+      <div class="card glass">
+        <p>
+        Étudiant en DEUST Webmaster (2e année), je crée des sites web solides et bien structurés : intégration, WordPress, optimisation et mise en ligne.
+		<br>
+		Mon objectif : un site qui s’affiche vite, qui reste clair, et qui se gère facilement au quotidien.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+		<div class="section-head">
+			<h2>Contact</h2>
+		</div>
+
+    <form id="contactForm" class="card glass form">
+	<div class="hp-field" aria-hidden="true">
+	  <label>
+		Ne pas remplir
+        <input type="text" name="website" tabindex="-1" autocomplete="off">
+	  </label>
+	</div>
+
+	<div class="row">
+	<label>
+		Nom
+		<input type="text" name="name" placeholder="Votre nom" autocomplete="name" required />
+	</label>
+
+	<label>
+		Email
+		<input type="email" name="email" placeholder="Votre@email.fr" autocomplete="email" required />
+	</label>
+	</div>
+
+	<label>
+		Message
+		<textarea name="message" rows="5" placeholder="Expliquez votre demande..." autocomplete="off" required></textarea>
+	</label>
+
+	<button class="btn" type="submit" id="submitBtn">Envoyer</button>
+	<p id="formStatus" class="form-status"></p>
+
+	</form>
+
+
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Noa MARCHIONNI — Portfolio</p>
+    </footer>
+  </main>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
