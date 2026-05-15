@@ -1,251 +1,191 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Noa MARCHIONNI</title>
-  <meta name="description" content="Mon Portfolio — Webmaster (DEUST Webmaster)" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/img/favicon.svg" id="favicon" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noa Marchionni — Web Developer</title>
+  <meta name="description" content="Web Developer — WordPress & Modern Stacks. Portfolio under construction. Back online in a few days." />
+  <meta name="theme-color" content="#0a0a0b" />
+  <meta property="og:title" content="Noa Marchionni — Web Developer" />
+  <meta property="og:description" content="Portfolio under construction. Back online in a few days." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0b;
+      --fg: #ededed;
+      --muted: #8a8a8e;
+      --line: #1d1d20;
+      --line-hover: #3a3a3f;
+      --dot: #6acc7e;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 56px 28px;
+      background-image:
+        radial-gradient(circle at 20% 0%, rgba(255,255,255,0.025), transparent 50%),
+        radial-gradient(circle at 80% 100%, rgba(255,255,255,0.02), transparent 50%);
+    }
+
+    .wrap {
+      max-width: 640px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+      margin-bottom: 44px;
+    }
+
+    .status .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--dot);
+      box-shadow: 0 0 0 4px rgba(106, 204, 126, 0.14);
+      animation: pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.45; }
+    }
+
+    h1 {
+      font-size: clamp(30px, 5.2vw, 40px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 36px;
+      letter-spacing: 0.005em;
+    }
+
+    .pitch {
+      font-size: 16px;
+      color: var(--fg);
+      margin-bottom: 44px;
+      max-width: 540px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin-bottom: 64px;
+    }
+
+    .links a {
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 15px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 3px;
+      transition: border-color 0.2s ease;
+    }
+
+    .links a:hover,
+    .links a:focus-visible {
+      border-color: var(--fg);
+      outline: none;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 0 0 28px 0;
+    }
+
+    .clients-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .clients {
+      font-size: 14px;
+      color: var(--fg);
+      line-height: 1.7;
+    }
+
+    .clients .sep {
+      color: var(--line-hover);
+      margin: 0 8px;
+    }
+
+    .clients .nda {
+      color: var(--muted);
+      font-size: 12px;
+      margin-left: 4px;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 40px 22px; }
+      .links { gap: 20px; }
+      .status { margin-bottom: 36px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .status .dot { animation: none; }
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Fond animé -->
-  <canvas id="bg"></canvas>
+  <main class="wrap">
+    <div class="status" role="status">
+      <span class="dot" aria-hidden="true"></span>
+      Portfolio under construction — back online in a few days
+    </div>
 
-  <!-- Header -->
-  <header class="site-header">
-    <a class="logo" href="#top">Noa MARCHIONNI</a>
+    <h1>Noa Marchionni</h1>
+    <p class="tag">Web Developer — WordPress &amp; Modern Stacks</p>
 
-    <nav class="nav">
-      <a href="#projets">Projets</a>
-      <a href="#skills">Compétences</a>
-      <a href="#about">À propos</a>
-      <a class="btn" href="#contact">Contact</a>
+    <p class="pitch">
+      I'm currently rebuilding my portfolio with new projects and an English version.
+      In the meantime, feel free to reach out directly or check my code on GitHub.
+    </p>
+
+    <nav class="links" aria-label="Contact">
+      <a href="mailto:noamarchionni@icloud.com">Email</a>
+      <a href="https://github.com/noamar5" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/noa-marchionni-74a326387/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </nav>
-  </header>
 
-  <main id="top" class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-card glass">
-        <p class="tag">DEUST Webmaster — 2e année</p>
-        <h1>
-          Mon <span class="neon">Portfolio</span><br />
-          Dév Web / Intégration / UI
-        </h1>
-        <p class="sub">
-        Je crée et administre des sites web modernes, performants et faciles à gérer, en alliant technique, contenu et expérience utilisateur.
-		<br>
-		Ici, vous trouverez mes projets, mes compétences et un formulaire de contact. 
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn" href="#projets">Voir mes projets</a>
-          <a class="btn ghost" href="#contact">Me contacter</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-value">HTML</span>
-            <span class="stat-label">Structure</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">CSS</span>
-            <span class="stat-label">UI / Responsive</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">JS</span>
-            <span class="stat-label">Animations</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-side">
-        <div class="panel glass">
-          <h2>Focus</h2>
-          <ul class="bullets">
-            <li>Intégration propre & responsive</li>
-            <li>WordPress : pages, thèmes, optimisation</li>
-            <li>Performance / SEO / accessibilité</li>
-			<li>Maintenance & mises à jour</li>
-          </ul>
-        </div>
-
-        <div class="panel glass">
-          <h2>Disponibilité</h2>
-          <p>Disponible pour un stage de 2 mois minimum en Asie.</p>
-          <div class="pill-row">
-            <span class="pill">Intégration</span>
-            <span class="pill">WordPress</span>
-            <span class="pill">SEO</span>
-			<span class="pill">Performance</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projets -->
-    <section id="projets" class="section">
-      <div class="section-head">
-        <h2>Projets</h2>
-      </div>
-
-      <div class="grid">
-        <article class="card glass">
-		<span class="project-badge">⭐ Projet réel</span>
-          <div class="card-top">
-            <span class="chip">WordPress</span>
-			<span class="chip">HTML/CSS</span>
-            <span class="chip">Responsive</span>
-			<span class="chip">UI</span>
-			<span class="chip">SEO (bases)</span>
-          </div>
-          <h3>Reconstruction WordPress — Gube Communication</h3>
-		  <p>Reconstruction d’un site WordPress suite à une perte de données.
-		  <br>
-			Recréation des pages, intégration des contenus et remise en ligne rapide.</p>
-          <div class="card-actions">
-            <a class="link" href="https://gubecom.fr" target="_blank" rel="noreferrer">Site</a>
-          </div>
-        </article>
-
-        <article class="card glass">
-		<span class="project-badge">👥 Client réel</span>
-          <div class="card-top">
-            <span class="chip">WordPress</span>
-            <span class="chip">Optimisation</span>
-			<span class="chip">Responsive</span>
-			<span class="chip">UX</span>
-			<span class="chip">SEO (bases)</span>
-          </div>
-          <h3>Optimisation d’un site WordPress — Puppy Corner</h3>
-          <p>Amélioration d’un site existant afin d’optimiser la structure, le responsive et l’expérience utilisateur.</p>
-          <div class="card-actions">
-            <a class="link" href="https://www.puppycorner.fr/" target="_blank" rel="noreferrer">Site</a>
-          </div>
-        </article>
-
-        <article class="card glass">
-		<span class="project-badge">🤝 Travail en équipe</span>
-          <div class="card-top">
-            <span class="chip">PHP</span>
-            <span class="chip">MySQL</span>
-			<span class="chip">CRUD</span>
-			<span class="chip">Sessions</span>
-			<span class="chip">Travail collaboratif</span>
-          </div>
-          <h3>Application web de gestion — Restaurant</h3>
-          <p>Développement en équipe d’une application web permettant de gérer l’activité d’un restaurant : authentification, tableau de bord et gestion des données.</p>
-          <div class="card-actions">
-            <a class="link" href="https://youtu.be/mHOll4mHPMs" target="_blank" rel="noreferrer">Démo</a>
-            <a class="link" href="https://github.com/noamar5/restaurant-management-webapp" target="_blank" rel="noreferrer">Code</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Compétences -->
-    <section id="skills" class="section">
-      <div class="section-head">
-        <h2>Compétences</h2>
-      </div>
-
-      <div class="grid-2">
-        <div class="card glass">
-          <h3>Front-end</h3>
-          <div class="bars">
-            <div class="bar">
-              <span>HTML</span>
-              <span class="pct">90%</span>
-              <div class="track"><div class="fill" style="--w: 90%"></div></div>
-            </div>
-            <div class="bar">
-              <span>CSS</span>
-              <span class="pct">85%</span>
-              <div class="track"><div class="fill" style="--w: 85%"></div></div>
-            </div>
-            <div class="bar">
-              <span>JavaScript</span>
-              <span class="pct">75%</span>
-              <div class="track"><div class="fill" style="--w: 75%"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card glass">
-          <h3>Outils</h3>
-          <div class="pill-row">
-            <span class="pill">Git</span>
-            <span class="pill">WordPress</span>
-            <span class="pill">SEO</span>
-            <span class="pill">PHP (bases)</span>
-            <span class="pill">MySQL (bases)</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- À propos -->
-    <section id="about" class="section">
-      <div class="section-head">
-        <h2>À propos</h2>
-      </div>
-
-      <div class="card glass">
-    	<p> Étudiant en DEUST Webmaster (2e année), je crée, gère et optimise des sites web afin d’assurer une présence en ligne professionnelle et efficace.</p>
-		<p>De l’intégration au déploiement sous WordPress, en passant par la gestion des contenus et les mises à jour, je veille à proposer des sites performants et durables.</p>
-		<p>Mon objectif : offrir des solutions web fiables, faciles à administrer et adaptées aux besoins réels des utilisateurs.</p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-		<div class="section-head">
-			<h2>Contact</h2>
-		</div>
-
-    <form id="contactForm" class="card glass form">
-	<div class="hp-field" aria-hidden="true">
-	  <label>
-		Ne pas remplir
-        <input type="text" name="website" tabindex="-1" autocomplete="off">
-	  </label>
-	</div>
-
-	<div class="row">
-	<label>
-		Nom
-		<input type="text" name="name" placeholder="Votre nom" autocomplete="name" required />
-	</label>
-
-	<label>
-		Email
-		<input type="email" name="email" placeholder="Votre@email.fr" autocomplete="email" required />
-	</label>
-	</div>
-
-	<label>
-		Message
-		<textarea name="message" rows="5" placeholder="Expliquez votre demande..." autocomplete="off" required></textarea>
-	</label>
-
-	<button class="btn" type="submit" id="submitBtn">Envoyer</button>
-	<p id="formStatus" class="form-status"></p>
-
-	</form>
-
-
-    </section>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> Noa MARCHIONNI — Portfolio</p>
-    </footer>
+    <div class="divider"></div>
+    <p class="clients-label">Recent clients</p>
+    <p class="clients">
+      Gube Communication<span class="sep">·</span>Puppy Corner<span class="sep">·</span>Town Hall of Talange<span class="nda">(NDA)</span>
+    </p>
   </main>
-  
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="assets/js/app.js"></script>
 </body>
 </html>
-
-
