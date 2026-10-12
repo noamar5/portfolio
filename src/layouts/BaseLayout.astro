@@ -1,6 +1,11 @@
 ---
-import { getAbsoluteLocaleUrl } from "astro:i18n";
-import { defaultLocale, isLocale, locales, stripLocale } from "../i18n/locales";
+import geistFontUrl from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { defaultLocale, isLocale, locales } from "../i18n/locales";
+import { localizePath } from "../i18n/paths";
+import { t } from "../i18n/ui";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -12,7 +17,7 @@ interface Props {
 const { title, description, indexable = true } = Astro.props;
 
 const locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
-const path = stripLocale(Astro.url.pathname);
+const absoluteUrl = (target: typeof locale) => new URL(localizePath(Astro.url.pathname, target), Astro.site).href;
 ---
 
 <!doctype html>
@@ -22,23 +27,27 @@ const path = stripLocale(Astro.url.pathname);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {/* Provisional empty favicon, avoids a 404 request until the real one exists. */}
-    <link rel="icon" href="data:," />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {/* The text font is needed for the first paint; Geist Mono can wait. */}
+    <link rel="preload" href={geistFontUrl} as="font" type="font/woff2" crossorigin />
     {
       indexable && (
         <>
-          <link rel="canonical" href={getAbsoluteLocaleUrl(locale, path)} />
+          <link rel="canonical" href={absoluteUrl(locale)} />
           {locales.map((alternate) => (
-            <link rel="alternate" hreflang={alternate} href={getAbsoluteLocaleUrl(alternate, path)} />
+            <link rel="alternate" hreflang={alternate} href={absoluteUrl(alternate)} />
           ))}
-          <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl(defaultLocale, path)} />
+          <link rel="alternate" hreflang="x-default" href={absoluteUrl(defaultLocale)} />
         </>
       )
     }
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#content">{t(locale, "skip.toContent")}</a>
+    <SiteHeader locale={locale} />
+    <main id="content">
       <slot />
     </main>
+    <SiteFooter locale={locale} />
   </body>
 </html>
