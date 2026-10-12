@@ -27,8 +27,7 @@ const absoluteUrl = (target: typeof locale) => new URL(localizePath(Astro.url.pa
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {/* Provisional empty favicon, avoids a 404 request until the real one exists. */}
-    <link rel="icon" href="data:," />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {/* The text font is needed for the first paint; Geist Mono can wait. */}
     <link rel="preload" href={geistFontUrl} as="font" type="font/woff2" crossorigin />
     {

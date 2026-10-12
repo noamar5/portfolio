@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Same colours as --color-accent and --color-on-accent in src/styles/global.css. -->
+  <rect width="32" height="32" rx="6" fill="#c8321a" />
+  <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="8">
+    <path d="M6.3 21.5v-11l7 11v-11" />
+    <path d="M16.9 21.5v-11l4.4 8 4.4-8v11" />
+  </g>
+</svg>
