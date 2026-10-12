@@ -23,9 +23,9 @@ const sections: { anchor: string; label: UiKey }[] = [
 
 <header class="site-header">
   <div class="container inner">
-    <a class="brand" href={home} aria-label={t(locale, "header.home")}>
+    <a class="brand" href={home}>
       <span class="mark" aria-hidden="true">NM</span>
-      <span class="name">Noa Marchionni</span>
+      <span class="name">Noa Marchionni<span class="visually-hidden">, {t(locale, "header.home")}</span></span>
     </a>
 
     <nav class="site-nav" aria-label={t(locale, "nav.label")}>

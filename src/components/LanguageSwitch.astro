@@ -19,10 +19,10 @@ const { locale } = Astro.props;
             href={localizePath(Astro.url.pathname, target)}
             lang={target}
             hreflang={target}
-            aria-label={localeNames[target]}
             aria-current={target === locale ? "page" : undefined}
           >
             {target.toUpperCase()}
+            <span class="visually-hidden"> {localeNames[target]}</span>
           </a>
         </li>
       ))

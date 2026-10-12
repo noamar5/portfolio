@@ -7,7 +7,7 @@ import type { Locale } from "./locales";
  */
 const en = {
   "skip.toContent": "Skip to content",
-  "header.home": "Noa Marchionni, home",
+  "header.home": "home",
   "nav.label": "Main",
   "nav.work": "Work",
   "nav.method": "Method",
@@ -22,7 +22,7 @@ type UiDictionary = Record<UiKey, string>;
 
 const fr: UiDictionary = {
   "skip.toContent": "Aller au contenu",
-  "header.home": "Noa Marchionni, accueil",
+  "header.home": "accueil",
   "nav.label": "Principale",
   "nav.work": "Projets",
   "nav.method": "Méthode",
