@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check:links": "node scripts/check-links.mjs",
+    "check:lighthouse": "lhci autorun"
+  },
+  "dependencies": {
+    "astro": "^7.3.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@lhci/cli": "^0.15.1",
+    "linkinator": "^8.1.0",
+    "typescript": "^6.0.3"
+  }
+}

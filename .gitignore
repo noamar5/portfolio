@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Local AI assistant settings
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Lighthouse CI reports
+.lighthouseci/
+
+# OS
+.DS_Store
