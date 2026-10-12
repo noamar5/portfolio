@@ -1,0 +1,44 @@
+---
+import type { Locale } from "../i18n/locales";
+import { t } from "../i18n/ui";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container inner">
+    <p>© {year} Noa Marchionni</p>
+    <a href="https://github.com/noamar5/portfolio">{t(locale, "footer.source")}</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 var(--space-6);
+    padding-block: var(--space-4);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    min-height: var(--target-min);
+  }
+</style>
