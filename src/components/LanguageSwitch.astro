@@ -1,0 +1,66 @@
+---
+import { localeNames, locales, type Locale } from "../i18n/locales";
+import { localizePath } from "../i18n/paths";
+import { t } from "../i18n/ui";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<nav class="language-switch" aria-label={t(locale, "language.label")}>
+  <ul role="list">
+    {
+      locales.map((target) => (
+        <li>
+          <a
+            href={localizePath(Astro.url.pathname, target)}
+            lang={target}
+            hreflang={target}
+            aria-label={localeNames[target]}
+            aria-current={target === locale ? "page" : undefined}
+          >
+            {target.toUpperCase()}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  ul {
+    display: flex;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+  }
+
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--target-min);
+    min-height: var(--target-min);
+    padding-inline: var(--space-3);
+    border-radius: calc(var(--radius-sm) - 1px);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-decoration: none;
+    transition:
+      color var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+
+  a[aria-current] {
+    background: var(--color-text);
+    color: var(--color-surface);
+  }
+
+  /* Keeps the focus ring above the neighbouring link. */
+  a:focus-visible {
+    z-index: 1;
+  }
+</style>
