@@ -1,6 +1,11 @@
 ---
+import geistFontUrl from "@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import { defaultLocale, isLocale, locales } from "../i18n/locales";
 import { localizePath } from "../i18n/paths";
+import { t } from "../i18n/ui";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -24,6 +29,8 @@ const absoluteUrl = (target: typeof locale) => new URL(localizePath(Astro.url.pa
     <meta name="description" content={description} />
     {/* Provisional empty favicon, avoids a 404 request until the real one exists. */}
     <link rel="icon" href="data:," />
+    {/* The text font is needed for the first paint; Geist Mono can wait. */}
+    <link rel="preload" href={geistFontUrl} as="font" type="font/woff2" crossorigin />
     {
       indexable && (
         <>
@@ -37,8 +44,11 @@ const absoluteUrl = (target: typeof locale) => new URL(localizePath(Astro.url.pa
     }
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#content">{t(locale, "skip.toContent")}</a>
+    <SiteHeader locale={locale} />
+    <main id="content">
       <slot />
     </main>
+    <SiteFooter locale={locale} />
   </body>
 </html>
