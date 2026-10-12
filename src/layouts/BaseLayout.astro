@@ -1,6 +1,6 @@
 ---
-import { getAbsoluteLocaleUrl } from "astro:i18n";
-import { defaultLocale, isLocale, locales, stripLocale } from "../i18n/locales";
+import { defaultLocale, isLocale, locales } from "../i18n/locales";
+import { localizePath } from "../i18n/paths";
 
 interface Props {
   title: string;
@@ -12,7 +12,7 @@ interface Props {
 const { title, description, indexable = true } = Astro.props;
 
 const locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : defaultLocale;
-const path = stripLocale(Astro.url.pathname);
+const absoluteUrl = (target: typeof locale) => new URL(localizePath(Astro.url.pathname, target), Astro.site).href;
 ---
 
 <!doctype html>
@@ -27,11 +27,11 @@ const path = stripLocale(Astro.url.pathname);
     {
       indexable && (
         <>
-          <link rel="canonical" href={getAbsoluteLocaleUrl(locale, path)} />
+          <link rel="canonical" href={absoluteUrl(locale)} />
           {locales.map((alternate) => (
-            <link rel="alternate" hreflang={alternate} href={getAbsoluteLocaleUrl(alternate, path)} />
+            <link rel="alternate" hreflang={alternate} href={absoluteUrl(alternate)} />
           ))}
-          <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl(defaultLocale, path)} />
+          <link rel="alternate" hreflang="x-default" href={absoluteUrl(defaultLocale)} />
         </>
       )
     }
